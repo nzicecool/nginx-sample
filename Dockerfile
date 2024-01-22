@@ -14,7 +14,7 @@ RUN adduser \
 COPY ./html /usr/share/nginx/html
 COPY ./css /usr/share/nginx/html/css
 
-RUN chown -R nginx_user:nginx_user /usr/share/nginx/html
+RUN chown -R choreo:choreo /usr/share/nginx/html
 
 EXPOSE 80
 
