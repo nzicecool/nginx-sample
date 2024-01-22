@@ -7,4 +7,6 @@ RUN chown -R choreo:choreo /usr/share/nginx/html
 
 EXPOSE 80
 
+USER 10014
+
 CMD ["nginx", "-g", "daemon off;"]
