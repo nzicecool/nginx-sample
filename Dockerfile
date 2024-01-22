@@ -11,8 +11,8 @@ RUN adduser \
     --uid 10014 \
     "choreo"
 
-COPY ./html /usr/share/nginx/html
-COPY ./css /usr/share/nginx/html/css
+#COPY ./html /usr/share/nginx/html
+#COPY ./css /usr/share/nginx/html/css
 
 RUN chown -R choreo:choreo /usr/share/nginx/html
 
