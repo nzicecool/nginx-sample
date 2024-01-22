@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginxinc/nginx-unprivileged:stable-alpine-slim
 
 # Create a user with a known UID/GID within range 10000-20000.
 # This is required by Choreo to run the container as a non-root user.
@@ -9,12 +9,12 @@ RUN adduser \
     --shell "/sbin/nologin" \
     --no-create-home \
     --uid 10014 \
-    "nginx"
+    "choreo"
 
 COPY ./html /usr/share/nginx/html
 COPY ./css /usr/share/nginx/html/css
 
-RUN chown -R nginx:nginx /usr/share/nginx/html
+RUN chown -R choreo:choreo /usr/share/nginx/html
 
 EXPOSE 80
 
