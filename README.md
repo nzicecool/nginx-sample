@@ -1,2 +1,2 @@
 # nginx-sample
-Simple Ngunx Docker Example
+Simple Nginx Docker Example
