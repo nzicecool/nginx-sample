@@ -1,8 +1,15 @@
-FROM nginx:alpine  # Use the lightweight Alpine-based Nginx image
+FROM nginx:alpine
 
-COPY ./html /usr/share/nginx/html  # Copy your HTML files to the default Nginx document root
-COPY ./css /usr/share/nginx/html/css  # Copy your CSS files to the CSS directory within the document root
+RUN addgroup -g 10014 nginx_user \
+    && adduser -u 10014 -G nginx_user -s /bin/sh -D nginx_user
 
-EXPOSE 80  # Expose port 80 for HTTP traffic
+COPY ./html /usr/share/nginx/html
+COPY ./css /usr/share/nginx/html/css
 
-CMD ["nginx", "-g", "daemon off;"]  # Start Nginx in the foreground
+RUN chown -R nginx_user:nginx_user /usr/share/nginx/html
+
+EXPOSE 80
+
+USER nginx_user
+
+CMD ["nginx", "-g", "daemon off;"]
