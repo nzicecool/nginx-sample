@@ -1,0 +1,42 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+header img {
+  width: 100px;
+  height: auto;  /* Maintain aspect ratio */
+}
+
+.featured-content {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.featured-content img {
+  width: 50%;
+  border-radius: 10px;  /* Add rounded corners */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);  /* Add a subtle shadow */
+}
+
+.main-content {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 30px;
+}
