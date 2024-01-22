@@ -9,12 +9,12 @@ RUN adduser \
     --shell "/sbin/nologin" \
     --no-create-home \
     --uid 10014 \
-    "choreo"
+    "nginx"
 
-#COPY ./html /usr/share/nginx/html
-#COPY ./css /usr/share/nginx/html/css
+COPY ./html /usr/share/nginx/html
+COPY ./css /usr/share/nginx/html/css
 
-RUN chown -R choreo:choreo /usr/share/nginx/html
+RUN chown -R nginx:nginx /usr/share/nginx/html
 
 EXPOSE 80
 
